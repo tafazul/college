@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link th:href="@{/styles/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/styles/styles.css}" rel="stylesheet" />
+</head>
+<body>
+<h1 class="college-name">Shree Vivekananda Institute of Science</h1>
+<h2 class="welcome-text"> Welcome <span th:text="${name}">User</span></h2>
+
+<div class="container admin-container">
+    <button class="" onclick="history.go(-1)">Back</button>
+</div>
+<div class="container admin-container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Course</th>
+            <th scope="col">Year</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student, itr : ${studentList}">
+            <td th:text="${itr.index+1}">Teacher</td>
+            <td th:text="${student.studentName}">Teacher</td>
+            <td th:text="${student.courseName}">Teacher</td>
+            <td th:text="${student.currentYear}">Teacher</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+</body>
+</html>

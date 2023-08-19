@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/styles/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/styles/styles.css}" rel="stylesheet" />
+</head>
+<body>
+<h1 class="college-name">Shree Vivekananda Institute of Science</h1>
+<div class="container admin-container">
+    <button class="" onclick="history.go(-1)">Back</button>
+</div>
+
+<div class="container admin-container course">
+    <form action="#" th:action="@{/addCourseSemesterSubmit}" th:object="${courseSemesterModel}" method="post">
+        <h3 class="college-name">Add Course Semester</h3>
+        <div class="form-elements">
+            <p>Course:
+                <select th:field="*{courseId}">
+                    <option th:each="course : ${courseList}" th:value="${course.id}" th:text="${course.courseName}">
+                    </option>
+                </select>
+            </p>
+            <p>Semester: <input type="text" th:field="*{semester}" /></p>
+            <p>Semester Year: <input type="text" th:field="*{semesterYear}" /></p>
+            <p>
+                Subjects:
+                <select th:field="*{subjectIdList}" class="form-control" multiple>
+                    <option th:each="s : ${subjectList}"
+                            th:value="${s.id}"
+                            th:text="${s.subjectName}"
+                    >
+                    </option>
+                </select>
+            </p>
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        </div>
+
+    </form>
+</div>
+
+
+<div class="container admin-container">
+    <form action="#" th:action="@{/addCourseSubmit}" th:object="${courseModel}" method="post">
+        <h3 class="college-name">Add Course</h3>
+        <div class="form-elements">
+            <p>Course Name: <input type="text" th:field="*{courseName}" /></p>
+            <p>Course Duration: <input type="text" th:field="*{courseDuration}" /></p>
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        </div>
+    </form>
+</div>
+
+<div class="container admin-container">
+    <form action="#" th:action="@{/addSubjectSubmit}" th:object="${subjectModel}" method="post">
+        <h3 class="college-name">Add Subject</h3>
+        <div class="form-elements">
+            <p>Subject Name: <input type="text" th:field="*{subjectName}" /></p>
+            <p>Max Score: <input type="text" th:field="*{maxMarks}" /></p>
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

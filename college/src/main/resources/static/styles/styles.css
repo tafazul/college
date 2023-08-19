@@ -1,0 +1,34 @@
+.college-name {
+    text-align: center;
+}
+.welcome-text {
+    text-align: center;
+    margin: auto;
+}
+.admin-container {
+    margin-top: 30px;
+}
+
+.admin-container .card{
+    cursor: pointer;
+}
+form {
+    width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+form h3 {
+background: darkgray;
+}
+.form-elements {
+padding: 14px;
+}
+.back-btn {
+    margin-left: 100px;
+}
+.welcome-container {
+    display: flex;
+}
+.logout-link {
+    margin-right: 40px;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link th:href="@{/styles/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/styles/styles.css}" rel="stylesheet" />
+</head>
+<body>
+<h1 class="college-name">Shree Vivekananda Institute of Science</h1>
+<div class="welcome-container">
+    <h2 class="welcome-text"> Welcome <span th:text="${name}">User</span></h2>
+    <a th:href="@{/logout}" class="logout-link card-link">Logout</a>
+</div>
+<div class="container admin-container">
+    <p>
+        Subjects Taught : <span th:text="${teacherDetails.subjects}"></span>
+    </p>
+</div>
+
+
+<script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+</body>
+</html>
